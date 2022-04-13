@@ -1,111 +1,55 @@
 <template>
-
 <b-container fluid>
-
 <b-form-input v-model="value" placeholder="enter country name" required></b-form-input>
-
 <button @click="getData()">click button</button>
-
 <!-- User Interface controls -->
-
 <b-row>
-
 <b-col lg="6" class="my-1">
-
 <b-form-group
-
 class="mb-0"
-
 >
-
 </b-form-group>
-
 </b-col>
-
-
 <b-col lg="6" class="my-1">
-
 </b-col>
-
-
 <b-col lg="6" class="my-1">
-
-<b-form-group
-
+    <b-form-group
 label="Filter"
-
 label-for="filter-input"
-
 label-cols-sm="3"
-
 label-align-sm="right"
-
 label-size="sm"
-
 class="mb-0"
-
 >
-
 <b-input-group size="sm">
-
 <b-form-input
-
 id="filter-input"
-
 v-model="filter"
-
 type="search"
-
 placeholder="Type to Search"
-
 ></b-form-input>
-
-
 <b-input-group-append>
-
 <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
-
 </b-input-group-append>
-
 </b-input-group>
-
 </b-form-group>
-
 </b-col>
-
-
 <b-col lg="6" class="my-1">
-
 <b-form-group
-
 v-model="sortDirection"
-
 label="Filter On"
-
 description="Leave all unchecked to filter on all data"
-
 label-cols-sm="3"
-
 label-align-sm="right"
-
 label-size="sm"
-
 class="mb-0"
-
 v-slot="{ ariaDescribedby }"
-
 >
-
 <b-form-checkbox-group
-
 v-model="filterOn"
-
 :aria-describedby="ariaDescribedby"
-
 class="mt-1"
-
 >
-
 <b-form-checkbox value="name">name</b-form-checkbox>
 
 <b-form-checkbox value="domains">domains</b-form-checkbox>
@@ -124,7 +68,8 @@ class="mt-1"
 
 
 <!-- Main table element -->
-
+<b-container>
+    <b-row col="8">
 <b-table
 
 :items="posts"
@@ -172,6 +117,8 @@ Info modal
 </template>
 
 </b-table>
+</b-row>
+</b-container>
 
 
 <!-- Info modal -->
